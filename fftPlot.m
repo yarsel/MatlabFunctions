@@ -1,4 +1,4 @@
-function fftPlot(x,fs,xName, semilogMode)
+function fftPlot(x,fs, semilogMode)
 % Tager fft af x og plotter resultatet.
 % Tager også imod navnet på dataen.
     N = length(x);
@@ -6,7 +6,7 @@ function fftPlot(x,fs,xName, semilogMode)
     xFFT = abs(fft(x));
     
     if (semilogMode == 0)
-        plot(f_axis, xFFT,'red')    
+        plot(f_axis, xFFT)    
     else if (semilogMode == 1)
         semilogx(f_axis, xFFT, 'red')
         end
@@ -14,8 +14,7 @@ function fftPlot(x,fs,xName, semilogMode)
 
     xlim("tight")
     ylim("tight")
-    title(xName)
-    xlabel("Frekvens [Hz]")
+    xlabel("Frequency [Hz]")
     ylabel("Amplitude []")
     grid on
 end
